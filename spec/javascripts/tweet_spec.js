@@ -10,7 +10,7 @@ describe('a tweet', function() {
   });
 
   it("has a username", function() {
-    expect(tweet.username).toEqual('quyen');
+    expect(tweet.changeUsername(tweet.username)).toEqual('@quyen');
   });
 
   it("has a character limit for content", function() {

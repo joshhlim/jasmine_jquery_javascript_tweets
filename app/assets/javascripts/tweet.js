@@ -1,6 +1,13 @@
 function Tweet(content, username) {
   this.content = content;
   this.username = username;
+  this.changeUsername = function(username) {
+    if (!(/^@/.test(username))) {
+      return username = "@" + username;
+    } else {
+    return username;
+    }
+  }
   this.isValid = function() {
     if (this.content.length > 140) {
       return false;
