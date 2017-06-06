@@ -4,11 +4,16 @@ $(document).ready(function(){
     $that = $(this)
     $(this).on("keyup",function(){
       newTweet.content = $that.val()
-      // $that.val()
       if (newTweet.content.length < 140) {
-      $(".character-count").html((newTweet.maxCharacterCount - newTweet.content.length) + ' characters left.')
+        $(".character-count").html(newTweet.maxCharacterCount -newTweet.content.length)
       }
-      else { $(".character-count").html("<span style='color:red;'>Your tweet is over the character limit.</span>") }
-    })
-  })
+      if (newTweet.isValid() === false) {
+          newTweet.errorMessages.forEach(function(msg) {
+            console.log(msg)
+            $(".error-messages").html("<li style='color:red;'>" + msg + "</li>");
+          })
+      $that.val(newTweet.content)
+      }
+   })
+  });
 });
