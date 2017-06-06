@@ -1,7 +1,6 @@
 describe('valid tweet', function() {
-  beforeEach(function(){
-    tweet = new Tweet('my first tweet here on good ol twitter!', '@billybob')
-  })
+  var tweet = new Tweet('my first tweet here on good ol twitter!', '@billybob')
+
   it("has content", function() {
     expect(tweet.content).not.toBeFalsy();
   });
@@ -26,5 +25,16 @@ describe('valid tweet', function() {
 });
 
 describe('invalid tweet', function(){
+  var content = 'this tweet is going to be way too long and also contain a links to twitters url shortener t.co which is a big nono on tweety because of reasons that are not entirely clear'
+  var tweet = new Tweet(content, '')
 
+  it("has no content", function() {
+    expect(tweet.content).toBeNull();
+  });
+  it("does not have valid content", function() {
+    expect(contentValid(content)).toBe(false);
+  });
+  it("has no username", function() {
+    expect(tweet.username).toBeNull();
+  });
 })

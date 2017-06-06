@@ -9,15 +9,18 @@ var Tweet = function(content, username) {
 }
 
 function contentValid(content){
-  return content.length <= 140 && !content.includes('t.co')
+  return content.length <= 140 && content.length > 0 && !content.includes('t.co')
 }
 
 function formatUsername(username){
-  if(!username.startsWith('@')){
+  if(username.startsWith('@')){
+    return username
+  }
+  else if(username){
     return '@' + username
   }
   else{
-    return username
+    return null
   }
 }
 
