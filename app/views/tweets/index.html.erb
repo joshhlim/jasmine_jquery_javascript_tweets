@@ -2,20 +2,7 @@
   <div class="col-xs-3 col-xs-offset-1">
     <%= image_tag 'tweety.gif', class: "img-responsive" %>
 
-
-    <form>
-      <h3>New Tweet</h3>
-      <div class="form-group">
-        <label for="username">Username</label>
-        <input type="text" class="form-control" id="username">
-      </div>
-
-      <div class="form-group">
-        <label for="tweet-content">Say Something</label>
-        <textarea class="form-control" id="tweet-content" rows="4" placeholder="What's on your mind?"></textarea>
-      </div>
-      <button type="submit" class="btn btn-primary">Submit</button>
-    </form>
+  <%= render 'form' %>
 
   </div>
 
