@@ -45,5 +45,9 @@ group :development, :test do
   # gem 'spring'
 
   gem 'faker'
+
+  gem 'jasmine-rails'
+
 end
+
 
