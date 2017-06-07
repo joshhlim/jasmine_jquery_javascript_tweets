@@ -10,19 +10,16 @@ Tweet.prototype.isValid = function(){
   this.errorMessages = []
   if (this.content.length > this.maxCharacterCount) {
     this.errorMessages.push("Your tweet is over the character limit.")
-    console.log(this.errorMessages)
     return false
   }
   else if ( this.referencesTwitter() ) {
     this.takeOutTwitter()
     this.errorMessages.push("You can't write 'twitter' in your tweet!")
-    console.log(this.errorMessages)
     return false
   }
   else if ( this.referencesTco() ) {
     this.takeOutTco()
     this.errorMessages.push("You can't reference 't.co' in your tweet!")
-    console.log(this.errorMessages)
     return false
   }
   else { return true }
@@ -58,8 +55,4 @@ Tweet.prototype.insertAtSymbol = function(name){
   else{
     return name
   }
-}
-
-Tweet.prototype.calcCharacterCount = function() {
-  return this.characterCount
 }

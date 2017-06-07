@@ -6,7 +6,7 @@ class TweetsController < ApplicationController
   def create
     @tweet = Tweet.new(content: params[:content], username: params[:username])
     if @tweet.save
-      redirect_to root_url
+      redirect_to tweets_path
     else
       render plain: "Error saving tweet", status: 422
     end
