@@ -1,12 +1,7 @@
 $(document).ready(function() {
-  $("#tweet-form").on('focusin', function() {
-    $("#tweet-content").on('keyup', function() {
-      var contentLength = $(this).val().length
-      $(".char-count").text("Character Count: " + contentLength)
-    })
-  })
-
   $("#tweet-content").on('keyup', function() {
+    var contentLength = $(this).val().length
+    $(".char-count").text("Character Count: " + contentLength)
     if ($(this).val().length > 140) {
       $("#length-err").text("Tweets have a max of 140 characters.")
     } else {
